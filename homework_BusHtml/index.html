@@ -219,7 +219,7 @@
       grid-template-columns: auto minmax(0, 1fr) auto;
       align-items: center;
       gap: 20px;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
 
     .route-badge {
@@ -262,6 +262,41 @@
       font-size: 0.57em;
       font-weight: 600;
       letter-spacing: 0.015em;
+    }
+
+    .route-mini {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      margin-bottom: 15px;
+    }
+
+    .route-mini::before {
+      content: "";
+      flex: 0 0 7px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--yellow);
+      box-shadow: 0 0 0 4px rgba(255, 210, 0, 0.08);
+    }
+
+    .route-mini-title {
+      margin: 0;
+      color: var(--ink);
+      font-size: clamp(17px, 2.3vw, 20px);
+      font-weight: 650;
+      letter-spacing: -0.015em;
+      line-height: 1.25;
+    }
+
+    .route-mini-title small {
+      margin-left: 9px;
+      color: var(--muted);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
     }
 
     .clock-block {
@@ -651,13 +686,13 @@
     }
 
     .route-board + .route-board {
-      margin-top: 44px;
-      padding-top: 38px;
+      margin-top: 30px;
+      padding-top: 26px;
       border-top: 1px solid var(--line);
     }
 
     .later-section {
-      margin-top: 26px;
+      margin-top: 22px;
     }
 
     .section-head {
@@ -784,8 +819,8 @@
     }
 
     .page-footer {
-      margin-top: 27px;
-      padding-top: 18px;
+      margin-top: 24px;
+      padding-top: 16px;
       border-top: 1px solid var(--line);
     }
 
@@ -950,7 +985,7 @@
       .route-head {
         grid-template-columns: auto minmax(0, 1fr);
         gap: 16px;
-        margin-bottom: 18px;
+        margin-bottom: 16px;
       }
 
       .route-badge {
@@ -971,8 +1006,8 @@
       }
 
       .route-board + .route-board {
-        margin-top: 34px;
-        padding-top: 30px;
+        margin-top: 26px;
+        padding-top: 22px;
       }
 
       .next-card {
@@ -1032,6 +1067,11 @@
       .route-kicker {
         font-size: 8.5px;
         letter-spacing: 0.14em;
+      }
+
+      .route-mini-title small {
+        display: block;
+        margin: 4px 0 0;
       }
 
       .journey {
@@ -1144,16 +1184,16 @@
       </div>
     </header>
 
-    <section class="route-board" aria-labelledby="routeTitleOut" data-stop="003261" data-direction="O"
-      data-default-note="由富泰邨上車 · BOARD AT FU TAI ESTATE"
-      data-label-tc="富泰邨往深圳灣口岸" data-label-en="Fu Tai Estate to Shenzhen Bay Port">
+    <section class="route-board" aria-labelledby="routeTitleIn" data-stop="003208" data-direction="I"
+      data-default-note="由深圳灣口岸開出 · FROM SHENZHEN BAY PORT"
+      data-label-tc="深圳灣口岸往富泰邨" data-label-en="Shenzhen Bay Port to Fu Tai Estate">
       <div class="route-head">
         <div class="route-badge" aria-label="路線 B3A">B3A</div>
         <div>
-          <div class="route-kicker">去程 OUTBOUND · 開往 TO · SHENZHEN BAY PORT</div>
-          <h2 class="route-title" id="routeTitleOut">
-            Shenzhen Bay Port
-            <span class="zh" lang="zh-Hant">深圳灣口岸</span>
+          <div class="route-kicker">由深圳灣口岸 FROM SHENZHEN BAY PORT</div>
+          <h2 class="route-title" id="routeTitleIn">
+            Fu Tai Estate
+            <span class="zh" lang="zh-Hant">富泰邨</span>
           </h2>
         </div>
         <div class="clock-block" aria-label="香港時間 Hong Kong time">
@@ -1161,122 +1201,6 @@
           <span>HKT</span>
         </div>
       </div>
-
-      <section class="journey" aria-label="富泰邨往深圳灣口岸行程 Journey from Fu Tai Estate to Shenzhen Bay Port">
-        <div class="stop-block">
-          <div class="stop-label"><span class="dot" aria-hidden="true"></span> 上車站 BOARD AT</div>
-          <div class="stop-name">Fu Tai Estate <span class="zh" lang="zh-Hant">富泰邨</span></div>
-          <div class="stop-address">Castle Peak Road · 青山公路</div>
-        </div>
-
-        <div class="connector" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none">
-            <rect x="3.8" y="2.5" width="16.4" height="17" rx="3.6" stroke="currentColor" stroke-width="1.7"/>
-            <path d="M7.2 6.4h3v3.1h-3zM13.8 6.4h3v3.1h-3z" fill="currentColor"/>
-            <path d="M6.4 13.2h11.2M9.2 19.5v1.3M14.8 19.5v1.3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-          </svg>
-        </div>
-
-        <div class="stop-block destination">
-          <div class="stop-label"><span class="dot" aria-hidden="true"></span> 目的地 DESTINATION</div>
-          <div class="stop-name">Shenzhen Bay Port <span class="zh" lang="zh-Hant">深圳灣口岸</span></div>
-          <div class="stop-address">Terminus · 終點站</div>
-        </div>
-      </section>
-
-      <section class="next-card is-loading js-next-card" aria-busy="true" aria-labelledby="nextTitleOut">
-        <div class="card-topline">
-          <div class="eyebrow" id="nextTitleOut">下一班 NEXT BUS</div>
-          <span class="due-chip" aria-hidden="true">即將到達 · DUE</span>
-        </div>
-
-        <div class="next-content">
-          <div class="count-wrap">
-            <span class="next-number js-next-minutes">···</span>
-            <span class="count-unit"><span>MIN</span><b>分鐘</b></span>
-          </div>
-
-          <div class="next-meta">
-            <div class="next-meta-label">預計到站 ESTIMATED ARRIVAL</div>
-            <div class="next-time-row">
-              <time class="js-next-time" datetime="">--:--</time>
-              <span>HKT</span>
-            </div>
-            <div class="next-destination">往深圳灣口岸 · TO SHENZHEN BAY PORT</div>
-          </div>
-        </div>
-
-        <div class="card-bottom">
-          <div class="next-note js-next-note">正在連接城巴實時數據… / Connecting to Citybus live data…</div>
-          <div class="next-index js-next-index">AUTO · 30s</div>
-        </div>
-
-        <svg class="bus-watermark" viewBox="0 0 160 100" fill="none" aria-hidden="true">
-          <rect x="19" y="9" width="122" height="70" rx="16" stroke="currentColor" stroke-width="5"/>
-          <path d="M34 27h28v22H34zM98 27h28v22H98z" stroke="currentColor" stroke-width="5"/>
-          <path d="M32 63h96" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
-          <circle cx="49" cy="86" r="10" stroke="currentColor" stroke-width="5"/>
-          <circle cx="111" cy="86" r="10" stroke="currentColor" stroke-width="5"/>
-        </svg>
-
-        <div class="refresh-track" aria-hidden="true">
-          <div class="refresh-fill js-refresh-fill"></div>
-        </div>
-      </section>
-
-      <section class="later-section js-later-section" aria-labelledby="laterTitleOut">
-        <div class="section-head">
-          <h2 class="section-title" id="laterTitleOut">其後班次 LATER BUSES</h2>
-          <span class="section-hint">LIVE ETA · 實時</span>
-        </div>
-        <div class="later-list js-later-list">
-          <div class="later-row skeleton" aria-hidden="true">
-            <div class="later-left"><div class="skeleton-block"></div></div>
-            <div class="skeleton-block"></div>
-          </div>
-          <div class="later-row skeleton" aria-hidden="true">
-            <div class="later-left"><div class="skeleton-block"></div></div>
-            <div class="skeleton-block"></div>
-          </div>
-        </div>
-      </section>
-    </section>
-
-    <section class="route-board" aria-labelledby="routeTitleIn" data-stop="003208" data-direction="I"
-      data-default-note="由深圳灣口岸開出 · FROM SHENZHEN BAY PORT"
-      data-label-tc="深圳灣口岸往富泰邨" data-label-en="Shenzhen Bay Port to Fu Tai Estate">
-      <div class="route-head">
-        <div class="route-badge" aria-label="路線 B3A">B3A</div>
-        <div>
-          <div class="route-kicker">回程 RETURN · 開往 TO · FU TAI ESTATE</div>
-          <h2 class="route-title" id="routeTitleIn">
-            Fu Tai Estate
-            <span class="zh" lang="zh-Hant">富泰邨</span>
-          </h2>
-        </div>
-      </div>
-
-      <section class="journey" aria-label="深圳灣口岸往富泰邨行程 Journey from Shenzhen Bay Port to Fu Tai Estate">
-        <div class="stop-block">
-          <div class="stop-label"><span class="dot" aria-hidden="true"></span> 上車站 BOARD AT</div>
-          <div class="stop-name">Shenzhen Bay Port <span class="zh" lang="zh-Hant">深圳灣口岸</span></div>
-          <div class="stop-address">Terminus · 總站</div>
-        </div>
-
-        <div class="connector" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none">
-            <rect x="3.8" y="2.5" width="16.4" height="17" rx="3.6" stroke="currentColor" stroke-width="1.7"/>
-            <path d="M7.2 6.4h3v3.1h-3zM13.8 6.4h3v3.1h-3z" fill="currentColor"/>
-            <path d="M6.4 13.2h11.2M9.2 19.5v1.3M14.8 19.5v1.3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-          </svg>
-        </div>
-
-        <div class="stop-block destination">
-          <div class="stop-label"><span class="dot" aria-hidden="true"></span> 目的地 DESTINATION</div>
-          <div class="stop-name">Fu Tai Estate <span class="zh" lang="zh-Hant">富泰邨</span></div>
-          <div class="stop-address">Fu Tai Shopping Centre · 富泰商場</div>
-        </div>
-      </section>
 
       <section class="next-card is-loading js-next-card" aria-busy="true" aria-labelledby="nextTitleIn">
         <div class="card-topline">
@@ -1336,6 +1260,74 @@
       </section>
     </section>
 
+    <section class="route-board" aria-labelledby="routeTitleOut" data-stop="003261" data-direction="O"
+      data-default-note="由富泰邨上車 · BOARD AT FU TAI ESTATE"
+      data-label-tc="富泰邨往深圳灣口岸" data-label-en="Fu Tai Estate to Shenzhen Bay Port">
+      <div class="route-mini">
+        <h2 class="route-mini-title" id="routeTitleOut">
+          富泰邨 → 深圳灣口岸
+          <small>Fu Tai Estate → Shenzhen Bay Port</small>
+        </h2>
+      </div>
+
+      <section class="next-card is-loading js-next-card" aria-busy="true" aria-labelledby="nextTitleOut">
+        <div class="card-topline">
+          <div class="eyebrow" id="nextTitleOut">下一班 NEXT BUS</div>
+          <span class="due-chip" aria-hidden="true">即將到達 · DUE</span>
+        </div>
+
+        <div class="next-content">
+          <div class="count-wrap">
+            <span class="next-number js-next-minutes">···</span>
+            <span class="count-unit"><span>MIN</span><b>分鐘</b></span>
+          </div>
+
+          <div class="next-meta">
+            <div class="next-meta-label">預計到站 ESTIMATED ARRIVAL</div>
+            <div class="next-time-row">
+              <time class="js-next-time" datetime="">--:--</time>
+              <span>HKT</span>
+            </div>
+            <div class="next-destination">往深圳灣口岸 · TO SHENZHEN BAY PORT</div>
+          </div>
+        </div>
+
+        <div class="card-bottom">
+          <div class="next-note js-next-note">正在連接城巴實時數據… / Connecting to Citybus live data…</div>
+          <div class="next-index js-next-index">AUTO · 30s</div>
+        </div>
+
+        <svg class="bus-watermark" viewBox="0 0 160 100" fill="none" aria-hidden="true">
+          <rect x="19" y="9" width="122" height="70" rx="16" stroke="currentColor" stroke-width="5"/>
+          <path d="M34 27h28v22H34zM98 27h28v22H98z" stroke="currentColor" stroke-width="5"/>
+          <path d="M32 63h96" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+          <circle cx="49" cy="86" r="10" stroke="currentColor" stroke-width="5"/>
+          <circle cx="111" cy="86" r="10" stroke="currentColor" stroke-width="5"/>
+        </svg>
+
+        <div class="refresh-track" aria-hidden="true">
+          <div class="refresh-fill js-refresh-fill"></div>
+        </div>
+      </section>
+
+      <section class="later-section js-later-section" aria-labelledby="laterTitleOut">
+        <div class="section-head">
+          <h2 class="section-title" id="laterTitleOut">其後班次 LATER BUSES</h2>
+          <span class="section-hint">LIVE ETA · 實時</span>
+        </div>
+        <div class="later-list js-later-list">
+          <div class="later-row skeleton" aria-hidden="true">
+            <div class="later-left"><div class="skeleton-block"></div></div>
+            <div class="skeleton-block"></div>
+          </div>
+          <div class="later-row skeleton" aria-hidden="true">
+            <div class="later-left"><div class="skeleton-block"></div></div>
+            <div class="skeleton-block"></div>
+          </div>
+        </div>
+      </section>
+    </section>
+
     <footer class="page-footer">
       <div class="refresh-row">
         <div class="refresh-copy">
@@ -1361,12 +1353,6 @@
         </span>
         <span>最後更新 LAST UPDATE：<time id="updatedAt" datetime="">—</time></span>
       </div>
-
-      <p class="disclaimer">
-        班次時間由城巴開放數據自動提供，只供參考；實際開出時間可能因交通情況而改變，請以城巴官方公佈為準。
-        <br>
-        Arrival times are provided automatically by Citybus Open Data for reference only. Actual times may vary due to traffic conditions; please refer to official Citybus information.
-      </p>
 
       <div class="sr-only" id="srStatus" role="status" aria-live="polite"></div>
     </footer>
