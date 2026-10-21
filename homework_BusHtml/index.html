@@ -685,10 +685,83 @@
       transition: transform 220ms linear;
     }
 
-    .route-board + .route-board {
-      margin-top: 30px;
-      padding-top: 26px;
-      border-top: 1px solid var(--line);
+    .route-masthead {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .route-masthead .route-badge {
+      min-width: 110px;
+      height: 78px;
+      padding: 0 18px;
+      border-radius: 20px;
+      font-size: clamp(36px, 5vw, 46px);
+    }
+
+    .routes-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: start;
+      gap: 18px;
+    }
+
+    .routes-grid .route-board {
+      min-width: 0;
+    }
+
+    .routes-grid .route-mini {
+      margin-bottom: 16px;
+    }
+
+    .routes-grid .next-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 238px;
+      padding: 22px 22px 21px;
+    }
+
+    .routes-grid .card-bottom {
+      margin-top: auto;
+      padding-top: 18px;
+    }
+
+    .routes-grid .next-content {
+      min-height: 128px;
+      gap: 16px;
+    }
+
+    .routes-grid .next-number {
+      font-size: clamp(84px, 12vw, 132px);
+    }
+
+    .routes-grid .next-meta-label {
+      font-size: 8px;
+      letter-spacing: 0.06em;
+    }
+
+    .routes-grid .next-destination {
+      font-size: 10px;
+    }
+
+    .routes-grid .later-row {
+      min-height: 58px;
+      padding: 9px 14px;
+    }
+
+    .routes-grid .later-left {
+      gap: 10px;
+    }
+
+    .routes-grid .later-index {
+      width: 24px;
+      height: 24px;
+    }
+
+    .routes-grid .later-right time {
+      font-size: 16px;
     }
 
     .later-section {
@@ -1005,11 +1078,6 @@
         padding: 16px 17px;
       }
 
-      .route-board + .route-board {
-        margin-top: 26px;
-        padding-top: 22px;
-      }
-
       .next-card {
         padding: 22px 21px 21px;
         border-radius: 23px;
@@ -1145,6 +1213,234 @@
       }
     }
 
+    @media (max-width: 720px) {
+      .route-masthead {
+        gap: 12px;
+        margin-bottom: 14px;
+      }
+
+      .route-masthead .route-badge {
+        min-width: 84px;
+        height: 60px;
+        padding: 0 13px;
+        border-radius: 16px;
+        font-size: 34px;
+        box-shadow: 0 12px 30px rgba(255, 210, 0, 0.14);
+      }
+
+      .route-masthead .clock-block {
+        display: flex;
+        min-width: 0;
+      }
+
+      .route-masthead .clock-block time {
+        font-size: clamp(22px, 5vw, 27px);
+      }
+
+      .routes-grid {
+        gap: 10px;
+      }
+
+      .routes-grid .route-mini {
+        min-height: 0;
+        margin-bottom: 12px;
+        gap: 6px;
+      }
+
+      .routes-grid .route-mini::before {
+        flex-basis: 5px;
+        width: 5px;
+        height: 5px;
+        box-shadow: 0 0 0 3px rgba(255, 210, 0, 0.07);
+      }
+
+      .routes-grid .route-mini-title {
+        font-size: clamp(14px, 2.7vw, 19px);
+        line-height: 1.25;
+      }
+
+      .routes-grid .route-mini-title small {
+        display: block;
+        margin: 3px 0 0;
+        font-size: 6.5px;
+        letter-spacing: 0.05em;
+        line-height: 1.35;
+      }
+
+      .routes-grid .next-card {
+        min-height: 208px;
+        padding: clamp(12px, 2.5vw, 18px);
+        border-radius: 18px;
+      }
+
+      .routes-grid .card-topline {
+        gap: 4px;
+        margin-bottom: 9px;
+      }
+
+      .routes-grid .eyebrow {
+        font-size: 6.5px;
+        letter-spacing: 0.1em;
+      }
+
+      .routes-grid .due-chip {
+        gap: 3px;
+        padding: 3px 6px;
+        font-size: 6px;
+        letter-spacing: 0.05em;
+      }
+
+      .routes-grid .next-content {
+        display: block;
+        min-height: 0;
+      }
+
+      .routes-grid .count-wrap {
+        align-items: flex-end;
+        gap: 6px;
+        margin-bottom: 9px;
+      }
+
+      .routes-grid .next-number {
+        font-size: clamp(62px, 11vw, 86px);
+        letter-spacing: -0.08em;
+        line-height: 0.78;
+      }
+
+      .routes-grid .count-unit {
+        gap: 1px;
+        padding-bottom: 3px;
+        font-size: 6.5px;
+        letter-spacing: 0.08em;
+      }
+
+      .routes-grid .count-unit b {
+        font-size: 8px;
+        letter-spacing: 0.03em;
+      }
+
+      .routes-grid .next-meta {
+        align-items: flex-start;
+        gap: 2px;
+        padding-bottom: 0;
+        text-align: left;
+      }
+
+      .routes-grid .next-meta-label {
+        font-size: 6px;
+        letter-spacing: 0.025em;
+        line-height: 1.3;
+      }
+
+      .routes-grid .next-time-row {
+        gap: 3px;
+      }
+
+      .routes-grid .next-time-row time {
+        font-size: clamp(23px, 4vw, 30px);
+      }
+
+      .routes-grid .next-time-row span {
+        font-size: 6px;
+        letter-spacing: 0.08em;
+      }
+
+      .routes-grid .next-destination {
+        max-width: none;
+        margin-top: 0;
+        font-size: 6.5px;
+        line-height: 1.35;
+      }
+
+      .routes-grid .card-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+        margin-top: auto;
+        padding-top: 10px;
+      }
+
+      .routes-grid .next-note {
+        font-size: 6.5px;
+        line-height: 1.35;
+        white-space: normal;
+      }
+
+      .routes-grid .next-index {
+        font-size: 6px;
+        letter-spacing: 0.06em;
+      }
+
+      .routes-grid .bus-watermark {
+        right: 7px;
+        bottom: -8px;
+        width: 78px;
+      }
+
+      .routes-grid .later-section {
+        margin-top: 15px;
+      }
+
+      .routes-grid .section-head {
+        gap: 4px;
+        margin-bottom: 7px;
+      }
+
+      .routes-grid .section-title {
+        font-size: 6.5px;
+        letter-spacing: 0.06em;
+      }
+
+      .routes-grid .section-hint {
+        font-size: 5.5px;
+        letter-spacing: 0.03em;
+      }
+
+      .routes-grid .later-list {
+        gap: 7px;
+      }
+
+      .routes-grid .later-row {
+        gap: 5px;
+        min-height: 42px;
+        padding: 7px 8px;
+        border-radius: 12px;
+      }
+
+      .routes-grid .later-left {
+        gap: 5px;
+      }
+
+      .routes-grid .later-index {
+        width: 18px;
+        height: 18px;
+        font-size: 7px;
+      }
+
+      .routes-grid .later-min {
+        font-size: clamp(15px, 2.5vw, 19px);
+      }
+
+      .routes-grid .later-unit {
+        margin-left: 3px;
+        font-size: 6px;
+        letter-spacing: 0.02em;
+      }
+
+      .routes-grid .later-right {
+        gap: 1px;
+      }
+
+      .routes-grid .later-right time {
+        font-size: 11px;
+      }
+
+      .routes-grid .later-right span {
+        font-size: 5.5px;
+        letter-spacing: 0.04em;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       *,
       *::before,
@@ -1184,22 +1480,23 @@
       </div>
     </header>
 
+    <div class="route-masthead">
+      <div class="route-badge" aria-label="路線 B3A">B3A</div>
+      <div class="clock-block" aria-label="香港時間 Hong Kong time">
+        <time id="clock" datetime="">--:--</time>
+        <span>HKT</span>
+      </div>
+    </div>
+
+    <div class="routes-grid">
     <section class="route-board" aria-labelledby="routeTitleIn" data-stop="003208" data-direction="I"
       data-default-note="由深圳灣口岸開出 · FROM SHENZHEN BAY PORT"
       data-label-tc="深圳灣口岸往富泰邨" data-label-en="Shenzhen Bay Port to Fu Tai Estate">
-      <div class="route-head">
-        <div class="route-badge" aria-label="路線 B3A">B3A</div>
-        <div>
-          <div class="route-kicker">由深圳灣口岸 FROM SHENZHEN BAY PORT</div>
-          <h2 class="route-title" id="routeTitleIn">
-            Fu Tai Estate
-            <span class="zh" lang="zh-Hant">富泰邨</span>
-          </h2>
-        </div>
-        <div class="clock-block" aria-label="香港時間 Hong Kong time">
-          <time id="clock" datetime="">--:--</time>
-          <span>HKT</span>
-        </div>
+      <div class="route-mini">
+        <h2 class="route-mini-title" id="routeTitleIn">
+          深圳灣口岸 → 富泰邨
+          <small>Shenzhen Bay Port → Fu Tai Estate</small>
+        </h2>
       </div>
 
       <section class="next-card is-loading js-next-card" aria-busy="true" aria-labelledby="nextTitleIn">
@@ -1327,6 +1624,7 @@
         </div>
       </section>
     </section>
+    </div>
 
     <footer class="page-footer">
       <div class="refresh-row">
